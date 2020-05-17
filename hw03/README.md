@@ -1,6 +1,6 @@
 # Homework3 - Internet of Things 101
 
-## Build Docker Images
+## Create Docker Images
 
 ### on TX2
 Three container images were built, one for face detector, one for local broker, one for message forwarder.
@@ -13,6 +13,35 @@ docker build -t hw03/forwarder -f docker/Dockerfile_Forwarder .
 ### on Cloud
 Two container images were built, one for remote broker, one for image processor.
 ```
-docker build -t hw03/remotebroker -f Dockerfile_RemoteBroker .
-docker build -t hw03/processor -f Dockerfile_ImageProcessor .
+docker build -t hw03/remotebroker -f docker/Dockerfile_RemoteBroker .
+docker build -t hw03/processor -f docker/Dockerfile_ImageProcessor .
+```
+
+## Run Containers
+
+### on TX2
+```
+# Create a bridge:
+docker network create --driver bridge hw03
+
+# Local Broker
+docker run --name mosquitto --network hw03 -p 1883:1883 hw03/localbroker
+
+# Message Forwarder
+docker run --name forwarder --network hw03 hw03/forwarder
+
+# Face FaceDetector
+docker run -d --privileged --network hw03 -v /dev/video0:/dev/video0 hw03/facedetector
+```
+
+### on Cloud
+```
+# Create a bridge:
+docker network create --driver bridge hw03
+
+# Remote Broker
+docker run --name remotebroker --network hw03 -p 1883:1883 hw03/remotebroker
+
+# Image Processor
+docker run --privileged --network hw03 hw03/processor
 ```
