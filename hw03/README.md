@@ -46,6 +46,11 @@ docker run --name remotebroker --network hw03 -p 1883:1883 hw03/remotebroker
 docker run --privileged --name processor --network hw03 hw03/processor
 ```
 
+## Flow and How It Works
+
+There are two Mosquitto brokers, one at the edge(TX2) and one on the cloud. These two brokers are containers hw03/localbroker and hw03/remotedbroker, both are running Alpine Linux with Mosquitto broker. hw03/facedetector is the container with face detection python script, once it detect faces, it cuts out the faces and sends to local broker (hw03/localbroker) via mqtt with topic face_images/gray. hw03/forwarder subscribes to local broker and send messages to remote broker once receive messages. hw03/processor is the image processing container, it subscribes to remote broker and sync to cloud object storage once receive messages.
+
+
 ## Cloud Object Storage  
 
 http://cloud-object-storage-v7-cos-standard-c5s.s3.jp-tok.cloud-object-storage.appdomain.cloud/  
