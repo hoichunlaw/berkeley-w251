@@ -1,0 +1,7 @@
+FROM alpine
+
+RUN apk update && apk add mosquitto
+#RUN mkdir /tmp
+#WORKDIR /tmp
+COPY localbroker.sh .
+CMD ["sh", "localbroker.sh"]

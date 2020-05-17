@@ -1,0 +1,10 @@
+ROM alpine
+
+RUN apk update
+RUN apk add python3
+RUN pip3 install --upgrade pip
+RUN pip3 install paho-mqtt
+RUN mkdir /tmp/sub
+WORKDIR /tmp/sub
+COPY forwarder.py .
+CMD ["python3", "forwarder.py"]
