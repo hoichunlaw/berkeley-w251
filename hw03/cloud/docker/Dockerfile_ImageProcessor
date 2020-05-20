@@ -14,11 +14,9 @@ RUN make install
 
 RUN echo "bf87c595976145c386349f53e2517493:a61ba4b36c06b17ce4a5cf1cb087821b79fb293c42b1e617" > $HOME/.cos_creds
 RUN chmod 600 $HOME/.cos_creds
-#RUN mkdir -m 777 /mnt/face_images_gray
-#RUN s3fs cloud-object-storage-v7-cos-standard-c5s /mnt/face_images_gray -o passwd_file=$HOME/.cos_creds -o sigv2 -o use_path_request_style -o url=https://s3.jp-tok.cloud-object-storage.appdomain.cloud
+
 WORKDIR /root
 COPY setup.sh .
-#CMD ["bash", "setup.sh"]
 
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
