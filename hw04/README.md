@@ -43,6 +43,7 @@ https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/w251_homework04.ipy
 ## Part 2 Question 1 TFLite
 
 Model | parrot | polar_bear | mcqueen | sea_lion |  
+--- | --- | --- | --- | ---  
 efficientnet-L_quant.tflite | 1535ms | 1560ms | 1550ms | 1545ms |
 
 
