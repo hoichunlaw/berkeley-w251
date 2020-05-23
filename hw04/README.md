@@ -82,6 +82,40 @@ efficientnet b7 | 234 |
 
 ## Part 2 Q5: How did the performance compare to TFLite? Be sure to through out the first run as it includes downloading.
 
-Inference time is much shorter compare the TFLite (excluding model download time)
+For mobilenet, TF1.15 achieved similar accuracy with faster inference time. For efficientnet, TF1.15 achieved faster inference time but somehow lower accuracy.
 
 ## Part 2 Q6: Compare the performance of TF2 to TF 1.15
+
+All models achieved similar accuracies in TF2 and TF1.15. But the inference time is much longer in TF2.
+
+## Part 2 Q7: What models did you use?
+
+AlexNet, GoogleNet, ResNet-18, VGG-16
+
+## Part 2 Q8: What was the average inference time for model and image combination? What where the returned classes their score?
+
+### Inference Time
+Model | parrot | polar_bear | mcqueen | sea_lion |  
+--- | --- | --- | --- | ---  
+AlexNet | 44ms | 43ms | 44ms | 48ms |
+GoogleNet | 67ms | 65ms | 72ms | 60ms |
+ResNet-18 | 48ms | 44ms | 46ms | 48ms |
+VGG-16 | 141ms | 96ms | 151ms | 261ms |
+
+### Score of correct class
+Model | parrot | polar_bear | mcqueen | sea_lion |  
+--- | --- | --- | --- | ---  
+AlexNet | 0.9995 | 0.9966 | 0.8086 | 0.9957 |
+GoogleNet | 0.9995 | 1.0000 | 0.6069 | 0.9980 |
+ResNet-18 | 0.8608 | 0.9067 | 0.4490 | 0.9282 |
+VGG-16 | 0.9995 | 1.0000 | 0.6475 | 1.0000 |
+
+## Part 2 Q9: In your own words, what is quantization? What is effect on peformance and accuracy?
+
+Quantization is to optimize the trained models into smaller in size and faster to run at inference time. The goal of quantization is to improve performance without sacrificing a lot of accuracy.
+
+## Part 2 Q10: In your option, which framework was best? Why?
+
+I would pick Jetson Inference framework. It faster to run for most models and it does not seem to sacrifice too much accuracy. One of the test images I have is a cartoon car McQueen, and Jetson Inference framework with model AlexNet give 80% score on correct label, which outperformed all other frameworks/models for this difficult classification.
+
+## Codes:
