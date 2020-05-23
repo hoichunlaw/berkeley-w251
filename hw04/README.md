@@ -1,6 +1,6 @@
 # Homework 4: DL 101
 
-## Part 1 Question 2
+## Part 1 Q2
 
 ### Name all the layers in the network, describe what they do.
 
@@ -36,11 +36,11 @@ Increasing batch size from 20 to 1000, the network is slower to converge and acc
 
 96%
 
-## Part 1 Question 3
+## Part 1 Q3 
 
 https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/w251_homework04.ipynb
 
-## Part 2 Question 1
+## Part 2 Q1: What was the average inference time for model and image combination? What where the returned classes their score?  
 
 ### Inference Time
 Model | parrot | polar_bear | mcqueen | sea_lion |  
@@ -61,3 +61,27 @@ efficientnet-S_quant.tflite | 0.8789 | 0.8828 | 0.4531 | 0.9571 |
 inception_v4_299_quant.tflite | 0.9961 | 0.9883 | 0.7931 | 0.9961 |
 mobilenet_v1_1.0_224_quant.tflite | 0.9961 | 0.9961 | 0.5586 | 0.9961 |
 mobilenet_v2_1.0_224_quant.tflite | 0 | 0 | 0 | 0 |
+
+## Part 2 Q2: In your opinion, which model is best and why?
+
+mobilenet_v1_1.0_224_quant.tflite is the best. It gives the fastest inference time and does not give up a lot of accuracy compare to inception_v4_299_quant.tflite.
+
+## Part 2 Q3: Did the EfficientNet models return the correct classifiction? If not why, and how would you fix this?
+
+It did not return the correct classification at the beginning. There is problem in mapping model output to class label. I changed the code in classifier.py to shift the mapping by 1 unit to match.
+
+## Part 2 Q4: How big (in megabytes) are the models?
+
+Model | size(MB) |
+--- | ---
+mobilenet_v1_100_224 | 15.13 |
+mobilenet_v2_130_224 | 19.37 |
+efficientnet b0 | 18.93 |
+efficientnet b4 | 68.74 |
+efficientnet b7 | 234 |
+
+## Part 2 Q5: How did the performance compare to TFLite? Be sure to through out the first run as it includes downloading.
+
+Inference time is much shorter compare the TFLite (excluding model download time)
+
+## Part 2 Q6: Compare the performance of TF2 to TF 1.15
