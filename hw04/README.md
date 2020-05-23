@@ -40,8 +40,9 @@ Increasing batch size from 20 to 1000, the network is slower to converge and acc
 
 https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/w251_homework04.ipynb
 
-## Part 2 Question 1 TFLite
+## Part 2 Question 1
 
+### Inference Time
 Model | parrot | polar_bear | mcqueen | sea_lion |  
 --- | --- | --- | --- | ---  
 efficientnet-L_quant.tflite | 1535ms | 1560ms | 1550ms | 1545ms |
@@ -51,4 +52,12 @@ inception_v4_299_quant.tflite | 1845ms | 1845ms | 1820ms | 1810ms |
 mobilenet_v1_1.0_224_quant.tflite | 100ms | 98ms | 98ms | 98ms |
 mobilenet_v2_1.0_224_quant.tflite | 75ms | 75ms | 70ms | 70ms |
 
-
+### Score of correct class
+Model | parrot | polar_bear | mcqueen | sea_lion |  
+--- | --- | --- | --- | ---  
+efficientnet-L_quant.tflite | 0.9336 | 0.8594 | 0.5273 | 0.8555 |
+efficientnet-M_quant.tflite | 0.9375 | 0.9023 | 0.5313 | 0.9297 |
+efficientnet-S_quant.tflite | 0.8789 | 0.8828 | 0.4531 | 0.9571 |
+inception_v4_299_quant.tflite | 0.9961 | 0.9883 | 0.7931 | 0.9961 |
+mobilenet_v1_1.0_224_quant.tflite | 0.9961 | 0.9961 | 0.5586 | 0.9961 |
+mobilenet_v2_1.0_224_quant.tflite | 0 | 0 | 0 | 0 |
