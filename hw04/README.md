@@ -45,5 +45,10 @@ https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/w251_homework04.ipy
 Model | parrot | polar_bear | mcqueen | sea_lion |  
 --- | --- | --- | --- | ---  
 efficientnet-L_quant.tflite | 1535ms | 1560ms | 1550ms | 1545ms |
+efficientnet-M_quant.tflite | 595ms | 600ms | 620ms | 610ms |
+efficientnet-S_quant.tflite | 385ms | 395ms | 390ms | 390ms |
+inception_v4_299_quant.tflite | 1845ms | 1845ms | 1820ms | 1810ms |
+mobilenet_v1_1.0_224_quant.tflite | 100ms | 98ms | 98ms | 98ms |
+mobilenet_v2_1.0_224_quant.tflite | 75ms | 75ms | 70ms | 70ms |
 
 
