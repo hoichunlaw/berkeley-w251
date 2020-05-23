@@ -1,6 +1,6 @@
 # Homework 4: DL 101
 
-## Question 2
+## Part 1 Question 2
 
 ### Name all the layers in the network, describe what they do.
 
@@ -14,7 +14,7 @@
 
 - 5th layer is pooling layer, with size 3x3 and stride 3. This layer calculates the max value across all the 3x3 regions from previous layer.  
 
-- 6th layer is output layer/fully connected layer, with softmax output. Number of classes is 10. It calculates the probability of 10 classes that the image belongs to.  
+- 6th layer is output layer, with softmax output. Number of classes is 10. It calculates the probability of 10 classes that the image belongs to.  
 
 ### Experiment with the number and size of filters in each layer. Does it improve the accuracy?  
 
@@ -33,4 +33,16 @@ Adding one more conv layer does not help with accuracy. The reason is that, afte
 Increasing batch size from 20 to 1000, the network is slower to converge and accuracy decreased.
 
 ### What is the best accuracy you can achieve? Are you over 99%? 99.5%?
+
+96%
+
+## Part 1 Question 3
+
+https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/w251_homework04.ipynb
+
+## Part 2 Question 1 TFLite
+
+Model | parrot | polar_bear | mcqueen | sea_lion |  
+efficientnet-L_quant.tflite | 1535ms | 1560ms | 1550ms | 1545ms |
+
 
