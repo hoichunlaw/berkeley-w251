@@ -114,7 +114,7 @@ VGG-16 | 0.9995 | 1.0000 | 0.6475 | 1.0000 |
 
 ## Part 2 Q9: In your own words, what is quantization? What is effect on peformance and accuracy?
 
-Quantization is to optimize the trained models into smaller in size and faster to run at inference time. The goal of quantization is to improve performance without sacrificing a lot of accuracy.
+Quantization is to optimize the trained models into smaller in size and faster to run at inference time. The goal of quantization is to reduce model size and inference time without sacrificing a lot of accuracy.
 
 ## Part 2 Q10: In your option, which framework was best? Why?
 
