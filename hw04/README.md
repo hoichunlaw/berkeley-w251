@@ -62,6 +62,8 @@ inception_v4_299_quant.tflite | 0.9961 | 0.9883 | 0.7931 | 0.9961 |
 mobilenet_v1_1.0_224_quant.tflite | 0.9961 | 0.9961 | 0.5586 | 0.9961 |
 mobilenet_v2_1.0_224_quant.tflite | 0 | 0 | 0 | 0 |
 
+Please note that for mobilenet_v2_1.0_224_quant, model returned 25.2176 for top 5 classified labels and none of the labels are correct. I suspect there is some problems with this quantized model. (also tried download model from TF hub, but still did not work)
+
 ## Part 2 Q2: In your opinion, which model is best and why?
 
 mobilenet_v1_1.0_224_quant.tflite is the best. It gives the fastest inference time and does not give up a lot of accuracy compare to inception_v4_299_quant.tflite.
