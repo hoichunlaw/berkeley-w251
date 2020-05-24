@@ -118,4 +118,9 @@ Quantization is to optimize the trained models into smaller in size and faster t
 
 I would pick Jetson Inference framework. It faster to run for most models and it does not seem to sacrifice too much accuracy. One of the test images I have is a cartoon car McQueen, and Jetson Inference framework with model AlexNet give 80% score on correct label, which outperformed all other frameworks/models for this difficult classification.
 
-## Codes:
+## Codes & images:
+
+Images: https://github.com/hoichunlaw/berkeley-w251/tree/master/hw04/images
+TF 1.15 classifier: https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/classifier_tf1.15.py
+TF 2.0 classifier: https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/classifier_tf2.py
+Jetson Inference Classifier: https://github.com/hoichunlaw/berkeley-w251/blob/master/hw04/imagenet-console-v2.py
