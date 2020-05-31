@@ -52,4 +52,4 @@ Accuracy is around 10% worse than before, and the training time is similar.
 
 ## 13. For part 2, step 5, How accurate was your model? Were you able to train it using a few images, or did you need a lot?
 
-
+I train a model to classify either an image is a building or forest. I used 1000 images for each category and I was able to achieve 99.94% accuracy.
