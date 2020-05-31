@@ -6,7 +6,7 @@ TensorFlow is the deep learning framework developed by Google Brain team. Leadin
 
 ## 2. What is TensorRT? How is it different from TensorFlow?
 
-TensorRT is a framework that is used for speeding up deep learning models' inference time. It is able to optimized deep learning models trained in different frameworks with the use of CUDA. 
+TensorRT is a framework that is used for speeding up deep learning models' inference time. It is able to optimized deep learning models trained in different frameworks and tensorRT was built with CUDA. 
 
 ## 3. What is ImageNet? How many images does it contain? How many classes?
 
