@@ -29,3 +29,4 @@ Neural network based one is better. The OpenCV default one could only detect fro
 
 ## Access to output images:
 
+For this exercise, I did not save the output images to clould object storage, I simply save them in local drive. These images can be access here: https://github.com/hoichunlaw/berkeley-w251/tree/master/hw07/faces
