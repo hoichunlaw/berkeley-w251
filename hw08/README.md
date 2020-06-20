@@ -4,7 +4,7 @@
 
 ### Path to zip file
 
-
+https://github.com/hoichunlaw/berkeley-w251/blob/master/hw08/annotations.zip
 
 ### Q1: In the time allowed, how many images did you annotate?
 
