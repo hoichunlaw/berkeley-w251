@@ -1,6 +1,8 @@
 # HW10: Reinforcement learning introduction
 
-## Link to trained agent video: https://github.com/hoichunlaw/berkeley-w251/tree/master/hw10/video
+## Link to trained agent video
+
+https://github.com/hoichunlaw/berkeley-w251/tree/master/hw10/video
 
 ## Summary
 
