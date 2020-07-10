@@ -7,12 +7,14 @@ https://s3.eu-de.cloud-object-storage.appdomain.cloud/hw11-video/videos.zip
 ## Summary
 
 - Initial model with 16 nodes on first layer and 8 nodes on second layer failed to converge
-- Model was able to converge by increasing nodes on first layer to 512 and nodes on second layer to 256
-- Changing activation function on second layer from relu to tanh while keeping relu on first layer improved model performance on test set (I think tanh out stabilized input for final linear layer, thus improved performance)
+- Model was able to converge by increasing number of nodes on first layer to 512 and number of nodes on second layer to 256
+- Changing activation function on second layer from relu to tanh while keeping relu on first layer improved model performance on test set (I think tanh produced output activations with range -1 to 1, this stabilized input for final linear layer, thus improved performance)
 - But using tanh for both first layer and second layer make the model slow to train / fail to converge.
 - Changing final layer activation from linear to softmax failed to converge
-- Changing epsilon decay from 0.995 to 0.9 made the model converge to "optimal" policy very fast. But performance on test set is poor. I think this is due to not enough exploration in early stage of training thus, decreased the robustness of model
+- Changing epsilon decay from 0.995 to 0.9 made the model converge to "optimal" policy very fast. But performance on test set was poor. I think this is due to not enough exploration in early stage of training and thus, decreased the robustness of model
 - Changing trainig termination condition from average reward of 200 to 220 improved the performance of model on test set. I was able to achieve average reward 250.71 on test set
+
+![Test Score](testing_score.png)
 
 ## Answer To Questions
 
@@ -31,7 +33,7 @@ I tried combinations of below parameters
 - second layer: 8, 16, 128, 256, 512 nodes with activation relu or tanh
 - final layer: linear or softmax
 - epsilon decay: 0.995, 0.99, 0.9
-- training termination condition: 200 or 220
+- training termination condition: average reward of last 100 training at 200 or 220
 
 ### Did you try any other changes that made things better or worse?
 
